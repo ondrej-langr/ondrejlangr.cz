@@ -25,7 +25,7 @@ const PageTitle: FC = ():ReactElement => {
 
     return <>
         <section>
-            <Hone><span>Ondřej Langr</span> from <span>Himejikostudio</span> presents</Hone>
+            <Hone><span>Ondřej Langr</span> presents</Hone>
             <Htwo>Profesionální tvorba webových stránek</Htwo>
         </section>
     </>;

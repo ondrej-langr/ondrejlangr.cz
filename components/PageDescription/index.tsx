@@ -18,7 +18,7 @@ const PageDescription: FC = (): ReactElement => {
     return <>
         <TitledSection title={"O mně"}>
             <Text>
-                <P>Ahoj! Jsme programátor který se specializuje na vytváření profesionálních webových aplikací/stránek podle nejnovějších a nejlepších technologií. Takže ať už je to cokoliv tak u mě si můžete být jistí, že to zvládnu :) </P>
+                <P>Ahoj! Jsme webový developer který se specializuje na vytváření profesionálních webových aplikací/stránek podle nejlepších technologií. Takže ať už je to cokoliv tak u mě si můžete být jistí, že to zvládnu :) </P>
                 <P>Selektivně vybírám nejlepší a nejefektivnější řešení na dané problémy a pracuju na tom, aby projekt dosahoval nejlepších výsledků.</P>
                 <P>Pojďme tedy spolu vybrat řešení právě pro Vás :) </P>
             </Text>
