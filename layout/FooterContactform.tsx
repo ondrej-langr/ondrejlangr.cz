@@ -69,9 +69,7 @@ const FooterContactForm: FC<{}> = (): ReactElement => {
           >
             {({ isSubmitting }) => (
               <Form>
-                <Field id="form_anchor" name="huehue" type="hidden" />
-
-                <FormRow>
+                <FormRow id="form_anchor">
                   <Label htmlFor="firstName">Tvoje jméno</Label>
                   <Field id="name" name="name" placeholder="Tvoje jméno" required />
                   <Err name="name" component="div" variants={errvars} animate={"in"} exit="out" initial="out" />
