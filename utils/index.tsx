@@ -1,3 +1,3 @@
 export const SEOpageTitle = (title): string => {
-    return `${title} | Himejikostudio`;
+    return `${title} | TOP programátor`;
 }
