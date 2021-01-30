@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { FC, ReactElement } from "react";
 import Button from "../Button";
 import TitledSection from "../TitledSection";
+import {useRouter} from "next/router"
 
 const P = styled.p({
     fontSize:" 1.1em",
@@ -15,6 +16,8 @@ const Text = styled.div({
 
 
 const PageDescription: FC = (): ReactElement => {
+    const {push} = useRouter();
+
     return <>
         <TitledSection title={"O mně"}>
             <Text>
@@ -22,7 +25,7 @@ const PageDescription: FC = (): ReactElement => {
                 <P>Selektivně vybírám nejlepší a nejefektivnější řešení na dané problémy a pracuju na tom, aby projekt dosahoval nejlepších výsledků.</P>
                 <P>Pojďme tedy spolu vybrat řešení právě pro Vás :) </P>
             </Text>
-            <Button>Chci napsat!</Button>
+            <Button onClick={() => push("/#form_anchor")}>Chci napsat!</Button>
         </TitledSection>
     </>
 }

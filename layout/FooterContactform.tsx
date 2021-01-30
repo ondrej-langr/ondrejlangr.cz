@@ -69,7 +69,7 @@ const FooterContactForm: FC<{}> = (): ReactElement => {
           >
             {({ isSubmitting }) => (
               <Form>
-                <Field id="huehue" name="huehue" type="hidden" />
+                <Field id="form_anchor" name="huehue" type="hidden" />
 
                 <FormRow>
                   <Label htmlFor="firstName">Tvoje jméno</Label>
