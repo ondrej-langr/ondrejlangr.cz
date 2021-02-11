@@ -28,8 +28,7 @@ const FooterContactForm: FC<{}> = (): ReactElement => {
     const [sended, setSEnded] = useState(false);
 
     return (
-      <TitledSection title={"Kontakt"} >
-        <H1>Pojdmě si napsat</H1>
+      <TitledSection title={"Pojďme si napsat!"} movingTitle={"Kontakt"}  >
         <Wrap>
           <Formik
             initialValues={initialValues}
@@ -86,6 +85,10 @@ const FooterContactForm: FC<{}> = (): ReactElement => {
                   <Field component="textarea" rows={8} id="text" type="text" name="text" required placeholder="Ahoj Ondro, potřeboval bych něco..." />
                   <Err name="text" component="div" variants={errvars} animate={"in"} exit="out" initial="out" />
                 </FormRow>
+
+                {
+                  
+                }
 
                 <FormRow css={{ marginTop: "3.5em" }} >
                   <Button type="submit" disabled={isSubmitting}>{isSubmitting ? <>Posílám...</> : <>Poslat zprávu</>}</Button>
