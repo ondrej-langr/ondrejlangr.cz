@@ -10,9 +10,19 @@ button, input, textarea {
   font-family: poppins, sans-serif;
 }
 a {
-  color: inherit;
+  color: var(--color-base);
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 5px;
+  border-bottom: 4px dashed var(--color-base);
+  display: inline-block;
+  position: relative;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom-style: solid;
+  transition: .4s;
 }
 
 * {

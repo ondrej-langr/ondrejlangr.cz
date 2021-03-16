@@ -41,7 +41,7 @@ const PageLayout: FC = ({ children }): ReactElement => {
                 <a></a>
             </div>
         </Footer>
-        <div css={{ 
+        {/*<div css={{ 
             position: "fixed",
             left: 0,
             top: 0,
@@ -61,7 +61,7 @@ const PageLayout: FC = ({ children }): ReactElement => {
             zIndex: 20
         }}>
             <div><b>Stránka se intenzivně připravuje.</b></div> <div> V mezičase mi stačí brnknout na  <a href="tel:+420607445251"> +420 607 445 251 </a>  nebo si se mnou psát na mailu  <a href="mailto:hi@ondrejlangr.cz"> hi@ondrejlangr.cz </a></div> 
-        </div>
+        </div>*/}
     </>
 }
 

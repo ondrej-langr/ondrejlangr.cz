@@ -3,14 +3,14 @@ import { FC, ReactElement } from "react";
 
 const Wrapper = styled.section({
     position: "relative",
-    marginTop: "4.5em",
+    marginTop: "8em",
     display: "flex",
     flexFlow: "wrap"
 }),
 SectionTitle = styled.h1({
     fontSize: "3.2em",
     color: "black",
-    marginBottom: "-0.5em",
+    marginBottom: "0.5em",
     marginTop: "2px"
 }),
 Content = styled.div({
@@ -18,7 +18,7 @@ Content = styled.div({
     zIndex: 2
 }),
 SectionTitleMovable = styled.div({
-    position: "sticky",
+    position: "relative",
     fontSize: "6em",
     color: "var(--color-base)",
     margin: 0,
@@ -52,7 +52,9 @@ const TitledSection: FC<{ title: string, movingTitle?: string }> = ({ title, chi
         <Wrapper {...rest}>
             <SectionTitleMovableWrap>
                 <SectionTitleMovable>
-                    {movingTitle ?? title}
+                    <div>
+                        {movingTitle ?? title}
+                    </div>
                 </SectionTitleMovable>
             </SectionTitleMovableWrap>
             <ContentWrap>

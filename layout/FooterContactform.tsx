@@ -86,9 +86,6 @@ const FooterContactForm: FC<{}> = (): ReactElement => {
                   <Err name="text" component="div" variants={errvars} animate={"in"} exit="out" initial="out" />
                 </FormRow>
 
-                {
-                  
-                }
 
                 <FormRow css={{ marginTop: "3.5em" }} >
                   <Button type="submit" disabled={isSubmitting}>{isSubmitting ? <>Posílám...</> : <>Poslat zprávu</>}</Button>
@@ -103,16 +100,25 @@ const FooterContactForm: FC<{}> = (): ReactElement => {
           </Formik>
           <ContactWrap>
             <address>
-              Ondřej Langr<br />
+              <span css={{ color: "var(--color-base)"}}>Ondřej Langr</span><br />
               Lukavec u Hořic 13 <br />
               508 01 Hořice
             </address>
-            <div css={{ margin: "20px 0", "span": {
-              color: "var(--color-base)",
-              "&:hover": {
-                textDecoration: "underline!important"
-              }
-            } }}>
+            <div css={{ 
+              margin: "20px 0", 
+              a: {
+                color: "inherit",
+                margin: 0,
+                textDecoration: "none",
+                borderBottom: 0
+              },
+              "span": {
+                color: "var(--color-base)",
+                "&:hover": {
+                  textDecoration: "underline!important"
+                },
+              } 
+            }}>
               <a href="tel:607445251">Tel.: <span>+420 607 445 251</span></a><br />
               <a href="mailto: hi@ondrejlangr.cz">Email : <span>hi@ondrejlangr.cz</span></a><br />
               <a href="https://www.linkedin.com/in/langr-ondrej/" target="_blank">Linkedin : <span>langr-ondrej</span></a><br />
