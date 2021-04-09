@@ -1,5 +1,5 @@
 import { FC, ReactElement, useEffect, useRef, useState } from "react";
-import { motion, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import clsx from "clsx";
 
 const VerticalScroller: FC<{

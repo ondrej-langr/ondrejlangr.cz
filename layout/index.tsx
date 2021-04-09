@@ -17,7 +17,7 @@ const PageLayout: FC = ({ children }): ReactElement => {
           <a></a>
         </div>
       </footer>
-      <div className="z-20 fixed top-0 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
+      <div className="z-20 fixed top-0 left-0 w-full h-screen bg-white flex items-center justify-center flex-col">
         <div className="my-2">
           <b>Stránka se intenzivně připravuje.</b>
         </div>{" "}
