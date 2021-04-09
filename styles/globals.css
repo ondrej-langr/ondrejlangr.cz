@@ -1,36 +1,20 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: poppins, sans-serif;
+  @apply bg-siteBg;
 }
 
-
-button, input, textarea {
-  font-family: poppins, sans-serif;
-}
-a {
-  color: var(--color-base);
-  text-decoration: none;
-  margin: 0 5px;
-  border-bottom: 4px dashed var(--color-base);
-  display: inline-block;
-  position: relative;
-  line-height: 17px;
-  text-decoration: none;
-}
-
-a:hover {
-  border-bottom-style: solid;
-  transition: .4s;
-}
-
-* {
-  box-sizing: border-box;
-}
 :root {
   --site-maxwi: 1230px;
   --site-sitespace: 20px;
   --color-base: #287ECD;
+
+  --color-blue: #3772ff;
+  --color-red: #e70808;
+  --color-yellow: #fdca40;
+  --color-bg: #080708;
+  --color-gray: #e6e8e6;
 }
 

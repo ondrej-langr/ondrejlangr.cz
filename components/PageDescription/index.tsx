@@ -1,21 +1,9 @@
-import styled from "@emotion/styled";
 import { FC, ReactElement } from "react";
-import {useRouter} from "next/router"
 
-const P = styled.p({
-    fontSize:" 1.1em",
-    fontWeight: 500,
-    color: "#071522e3",
-}),
-Wrap = styled.section({
-    margin: "4em -15px 3.5em",
-    display: 'flex',
-}),
-Text = styled.div({
-    flexBasis: "50%",
-    padding: "0 15px"
-});
-
+const 
+    P:FC = ({children}): ReactElement => <p className="text-lg font-medium text-blue-200">{children}</p>,
+    Wrap:FC = ({children}): ReactElement => <section className="mt-16 -mb-4 mx-14 flex">{children}</section>,
+    Text:FC = ({children}): ReactElement => <div className="basis flex-none w-1/2 px-4">{children}</div>
 
 const PageDescription: FC = (): ReactElement => {
 
