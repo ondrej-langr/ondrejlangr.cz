@@ -1,11 +1,14 @@
+import clsx from "clsx";
 import { FC, ReactElement } from "react";
-import FooterContactForm from "./FooterContactform";
 import PageLayoutHead from "./head";
 import PageLayoutHeader from "./header";
+import useSiteStore from "./store";
 
 const PageLayout: FC = ({ children }): ReactElement => {
+  const isLoading = useSiteStore((state) => state.isLoading);
+
   return (
-    <>
+    <div className={clsx(isLoading && "cursor-wait")}>
       <PageLayoutHead />
       <PageLayoutHeader />
 
@@ -17,7 +20,7 @@ const PageLayout: FC = ({ children }): ReactElement => {
           <a></a>
         </div>
       </footer>
-      <div className="z-20 fixed top-0 left-0 w-full h-screen bg-white flex items-center justify-center flex-col">
+      {/*<div className="z-20 fixed top-0 left-0 w-full h-screen bg-white flex items-center justify-center flex-col">
         <div className="my-2">
           <b>Stránka se intenzivně připravuje.</b>
         </div>{" "}
@@ -33,9 +36,9 @@ const PageLayout: FC = ({ children }): ReactElement => {
             {" "}
             hi@ondrejlangr.cz{" "}
           </a>
-        </div>
-      </div>
-    </>
+  </div>
+      </div>*/}
+    </div>
   );
 };
 

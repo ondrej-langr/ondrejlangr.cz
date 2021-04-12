@@ -29,24 +29,24 @@ const Title: FC = ({ children }): ReactElement => {
       <div className="flex flex-col min-h-screen py-20">
         <div className="my-auto">
           <div className="relative">
-            <h1 className="text-8xl font-bold uppercase text-white max-w-screen-lg mx-auto px-4 z-10 relative">
+            <h1 className="text-8xl font-bold uppercase text-white max-w-screen-xl mx-auto px-4 z-10 relative">
               Ondřej Langr
             </h1>
-            <div className="w-7/12 bg-red-600 bg-opacity-10 h-9 absolute left-0 bottom-0" />
+            <div className="w-7/12 bg-sitePurple bg-opacity-10 h-9 absolute left-0 bottom-0" />
           </div>
           <div className="pt-9 relative">
             <h2
-              className="flex flex-wrap font-sans text-4xl font-bold max-w-screen-lg mx-auto px-4 z-10 relative"
+              className="flex flex-wrap font-sans text-4xl font-bold max-w-screen-xl mx-auto px-4 z-10 relative"
               style={{ color: "#898989" }}
             >
               <Specialization>Web Development</Specialization>
               <Specialization>Design</Specialization>
               <Specialization>Finance</Specialization>
             </h2>
-            <div className="w-10/12 bg-red-600 bg-opacity-5 h-9 absolute left-0 -bottom-3" />
+            <div className="w-10/12 bg-sitePurple bg-opacity-5 h-9 absolute left-0 -bottom-3" />
           </div>
         </div>
-        <div className="flex flex-wrap flex-none max-w-screen-lg mx-auto px-4 w-full">
+        <div className="flex flex-wrap flex-none max-w-screen-xl mx-auto px-4 w-full">
           <SocLink href="tel:+40607445251" title="Zavolat">
             <svg
               xmlns="http://www.w3.org/2000/svg"

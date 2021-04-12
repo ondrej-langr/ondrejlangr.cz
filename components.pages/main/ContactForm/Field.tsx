@@ -54,6 +54,7 @@ const Field: FC<
         onBlur={fHandl}
         {...props}
       />
+      {!isValid && <small className="text-red-600">{error}</small>}
     </div>
   );
 };

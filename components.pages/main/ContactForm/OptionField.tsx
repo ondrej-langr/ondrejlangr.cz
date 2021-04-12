@@ -13,17 +13,12 @@ const OptionField: FC<
     wrapProps?: HTMLProps<HTMLDivElement>;
   }
 > = ({ placeholder, className, wrapProps, ...props }): ReactElement => {
-  const [f, setF] = useState<boolean>();
   const { values, errors, touched } = useFormikContext<initVals>();
 
   const val = values[props.name];
   const error = errors[props.name];
   const isTouched = touched[props.name];
   const isValid = !error && isTouched;
-
-  const fHandl = (e: FocusEvent) => {
-    setF(e.type === "focus");
-  };
 
   return (
     <div
@@ -33,20 +28,17 @@ const OptionField: FC<
       <label
         htmlFor={props.id}
         className={clsx(
-          "font-normal transition-all duration-200 mb-4 block text-gray-500"
+          "font-normal transition-all duration-200 mb-4 block cursor-pointer hover:underline hover:text-white",
+          val === props?.value ? "text-white underline" : "text-gray-500"
         )}
       >
         <FormikField
           id={props.id}
           className={clsx(
             className,
-            "bg-white mr-4 rounded-full",
-            "ring-4",
-            "focus:outline-none focus:ring-blue-700",
-            isValid ? "ring-green-600" : "ring-transparent"
+            "bg-white mr-4 rounded-full w-4 h-4",
+            "focus:outline-none"
           )}
-          onFocus={fHandl}
-          onBlur={fHandl}
           type="radio"
           {...props}
         />

@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         siteBg: "#131113",
         gray2: "#6C6C6C",
+        sitePurple: "#5C04CC"
       },
       height: {
         'screen-1/2': "50vh"
@@ -28,6 +29,7 @@ module.exports = {
   variants: {
     extend: {
      width: ['hover', 'focus', 'group-hover'],
+     inset: ['hover', 'focus', 'group-hover'],
     }
   },
   plugins: [],

@@ -1,5 +1,7 @@
+import clsx from "clsx";
 import { Form, Formik, FormikBag, FormikProps } from "formik";
-import { FC, ReactElement, useRef } from "react";
+import useSiteStore from "layout/store";
+import { FC, ReactElement, useRef, useState } from "react";
 import { VerticalScroller } from "..";
 import Field from "./Field";
 import OptionField from "./OptionField";
@@ -9,16 +11,30 @@ import { initVals } from "./_tsc";
 
 const ContactForm: FC = (): ReactElement => {
   const formikRef = useRef<FormikProps<initVals>>(null);
+  const setLoading = useSiteStore((state) => state.setLoading);
+  const [showDone, setShowDone] = useState(false);
 
-  const onSubmitCallback = (
+  const onSubmitCallback = async (
     values: initVals,
     actions: FormikBag<initVals, initVals>
-  ) => {};
+  ) => {
+    setLoading(true);
+    const res = await fetch("/api/contactus", {
+      method: "POST",
+      body: JSON.stringify(values),
+    });
+    setShowDone(true);
+    setTimeout(() => {
+      setShowDone(false), actions.resetForm();
+    }, 15000);
+    setLoading(false);
+  };
 
   return (
     <>
       <VerticalScroller
         title="Let's talk bussines"
+        id="contact"
         elements={[
           {
             title: "",
@@ -63,14 +79,25 @@ const ContactForm: FC = (): ReactElement => {
                           className: "mt-12",
                         }}
                       />
+                      {showDone && (
+                        <p className={"text-green-700 text-2xl my-10"}>
+                          Thank you for your message! I'll get to you right away
+                          as soon as it will be possible :)
+                        </p>
+                      )}
                       <button
                         type="submit"
-                        className="bg-indigo-700 py-4 px-5 mt-12 text-white mx-auto block"
+                        className={clsx(
+                          "bg-indigo-700 py-4 px-5 mt-12 text-white mx-auto block",
+                          formikRef.current?.isSubmitting &&
+                            "pointer-events-none opacity-60"
+                        )}
+                        disabled={formikRef.current?.isSubmitting}
                       >
                         Submit
                       </button>
                     </div>
-                    <div className="col-span-5">
+                    <div className="col-span-5 pl-7">
                       <p className="m-0 text-white text-2xl">Expected Budget</p>
                       <div role="group" className="mt-4 mb-10">
                         <OptionField
@@ -103,6 +130,12 @@ const ContactForm: FC = (): ReactElement => {
                           value="$300k+"
                           placeholder="$300k+"
                         />
+                        <OptionField
+                          type="radio"
+                          name="budget"
+                          value="Not sure"
+                          placeholder="Not sure"
+                        />
                       </div>
                       <p className="m-0 text-white text-2xl">
                         Field of expretise
@@ -119,6 +152,12 @@ const ContactForm: FC = (): ReactElement => {
                           name="tech"
                           value="finance"
                           placeholder="Finance"
+                        />
+                        <OptionField
+                          type="radio"
+                          name="tech"
+                          value="Not sure"
+                          placeholder="Not sure"
                         />
                       </div>
                     </div>

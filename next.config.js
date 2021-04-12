@@ -1,4 +1,6 @@
-module.exports = {
+const withPWA = require("next-pwa");
+
+module.exports = withPWA({
   future: {
     webpack5: true,
   },
@@ -6,4 +8,8 @@ module.exports = {
     locales: ["en-US", "cs-CZ"],
     defaultLocale: "en-US",
   },
-};
+  pwa: {
+    dest: "public",
+    disable: process.env.NODE_ENV === "development",
+  },
+});

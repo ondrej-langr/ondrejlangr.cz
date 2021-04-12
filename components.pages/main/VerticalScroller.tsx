@@ -5,8 +5,9 @@ import clsx from "clsx";
 const VerticalScroller: FC<{
   title: string;
   description?: string;
-  elements: { title: string; description: ReactElement }[];
-}> = ({ title, description, elements }): ReactElement => {
+  elements: { title: string; description: ReactElement | ReactElement[] }[];
+  id?: string;
+}> = ({ title, description, elements, id }): ReactElement => {
   const stickyRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
   const [sizeF, setSizeF] = useState<number[]>([0, 0]);
@@ -29,6 +30,7 @@ const VerticalScroller: FC<{
         }px - 7rem)`,
       }}
       className="relative"
+      id={id}
     >
       <div
         className={clsx(
@@ -38,13 +40,16 @@ const VerticalScroller: FC<{
         ref={stickyRef}
       >
         <div
-          className="max-w-screen-lg px-4 font-bold mx-auto pt-32"
+          className="max-w-screen-xl px-4 font-bold mx-auto pt-32"
           ref={(ele: HTMLDivElement) => {
             if (ele === null) return;
             setSizeT(ele.offsetHeight);
           }}
         >
-          <h1 className="mt-0 text-white text-7xl mb-0 uppercase">{title}</h1>
+          <h1 className="mt-0 text-white text-7xl mb-0 uppercase relative inline-block">
+            <span className="z-10 relative">{title}</span>
+            <span className="absolute w-full bg-sitePurple bottom-0 left-0 h-6 z-0" />
+          </h1>
           <p className="text-gray2 text-opacity-80 text-3xl mt-4 leading-normal">
             {description}
           </p>
@@ -58,14 +63,15 @@ const VerticalScroller: FC<{
               setSizeF([ele.offsetWidth, ele.offsetHeight]);
             }}
           >
-            {elements.map((ele) => (
+            {elements.map((ele, index) => (
               <div
                 className={clsx(
                   "w-full flex-none mt-40",
                   elements.length > 1 && "h-screen"
                 )}
+                key={ele.title || index}
               >
-                <div className="max-w-screen-lg px-4 m-auto w-full">
+                <div className="max-w-screen-xl px-4 m-auto w-full">
                   <p className="text-gray-100 my-0 mb-8 mt-2 text-5xl font-bold uppercase">
                     {ele.title}
                   </p>

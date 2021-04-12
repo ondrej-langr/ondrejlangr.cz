@@ -1,10 +1,10 @@
 import * as Yup from "yup"
 
 const validationSchema = Yup.object().shape({
-  fullName: Yup.string().required("Napiště mi také jméno ať se trochu poznáme lépe"),
-  email: Yup.string().email().required("Zanechte mi na sebe kontakt, prosím"),
+  fullname: Yup.string().required("Leave me here your name so I can know who Im gonna talk to"),
+  email: Yup.string().email().required("Dont forget to write down your mail!"),
   telephone: Yup.string().optional(),
-  message: Yup.string().required("Napište mi prosím ještě nějakou zprávu ať vím o co se jedná ;)"),
+  message: Yup.string().required("...and message is important too!"),
   budget: Yup.number().optional()
 })
 
