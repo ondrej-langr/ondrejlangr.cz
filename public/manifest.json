@@ -1,0 +1,15 @@
+{
+  "name": "OndrejLangr Offline",
+  "short_name": "OndrejLangr.cz",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#5C04CC",
+  "background_color": "#131113",
+  "icons": [
+    {
+        "src": "/android-chrome-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+    }
+  ]
+}

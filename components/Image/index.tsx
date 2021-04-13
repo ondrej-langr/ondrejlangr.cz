@@ -18,12 +18,31 @@ const Image: FC<ImageProps> = ({
     <>
       <div
         className={clsx([
-          "opacity-0 transition-opacity duration-400",
+          "opacity-0 transition-opacity duration-400 relative",
           { "opacity-100": isReady },
           className,
         ])}
+        style={{ lineHeight: 0 }}
       >
-        <NextImage onLoad={onLoadCallback} {...props} />
+        {!isReady && (
+          <div className="flex absolute inset-0 z-0 bg-white justify-center items-center rounded-2xl">
+            <div>
+              <NextImage
+                src="/loading.gif"
+                width={75}
+                height={75}
+                className="m-auto"
+              />
+              <p>Loading...</p>
+            </div>
+          </div>
+        )}
+        <NextImage
+          onLoad={onLoadCallback}
+          onLoadStart={() => setIsReady(false)}
+          className="z-10 relative"
+          {...props}
+        />
       </div>
     </>
   );
