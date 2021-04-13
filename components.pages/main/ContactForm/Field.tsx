@@ -18,8 +18,7 @@ const Field: FC<
 
   const val = values[props.name];
   const error = errors[props.name];
-  const isTouched = touched[props.name];
-  const isValid = !error && isTouched;
+  const isTouched = touched[props.name] || false;
 
   const fHandl = (e: FocusEvent) => {
     setF(e.type === "focus");
@@ -48,13 +47,13 @@ const Field: FC<
           "bg-transparent w-full bg-white px-3 pb-3 pt-7 text-lg text-gray-900 transition-all duration-100",
           "ring-4",
           "focus:outline-none focus:ring-blue-700",
-          isValid ? "ring-green-600" : "ring-transparent"
+          error && isTouched ? "ring-green-600" : "ring-transparent"
         )}
         onFocus={fHandl}
         onBlur={fHandl}
         {...props}
       />
-      {!isValid && <small className="text-red-600">{error}</small>}
+      {error && isTouched && <small className="text-red-600">{error}</small>}
     </div>
   );
 };

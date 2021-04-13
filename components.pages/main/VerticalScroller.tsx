@@ -66,7 +66,7 @@ const VerticalScroller: FC<{
             {elements.map((ele, index) => (
               <div
                 className={clsx(
-                  "w-full flex-none mt-40",
+                  "w-full flex-none mt-40 inline-block",
                   elements.length > 1 && "h-screen"
                 )}
                 key={ele.title || index}

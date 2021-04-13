@@ -48,7 +48,7 @@ const NavLink: FC<HTMLMotionProps<"a">> = ({
       <li className="my-7">
         <motion.a
           variants={variants}
-          className="text-7xl cursor-pointer text-white font-semibold whitespace-nowrap overflow-hidden block"
+          className="text-7xl cursor-pointer text-white font-semibold whitespace-nowrap overflow-hidden block hover:no-underline"
           onHoverStart={() => toggleH()}
           onHoverEnd={() => toggleH()}
           onClick={onClick}

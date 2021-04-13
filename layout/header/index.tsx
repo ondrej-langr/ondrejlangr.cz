@@ -1,33 +1,21 @@
 import clsx from "clsx";
-import { AnimatePresence, motion, useCycle, Variants } from "framer-motion";
-import { FC, ReactElement } from "react";
-import NavLink from "./NavLink";
-
-const variants = {
-  open: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.4 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
-};
-
-const bgVariants: Variants = {
-  open: {
-    clipPath: "ellipse(100vh 100vh at 100% 0%)",
-    opacity: 1,
-  },
-  closed: {
-    clipPath: "ellipse(0vh 0vh at 100% 0%)",
-    opacity: 0,
-  },
-};
+import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { CSSProperties, FC, ReactElement } from "react";
+import {
+  listVariants,
+  bgVariants,
+  centerLineVarints,
+  movingLinesVariants,
+} from "./_anim-variants";
+import NavLink from "../NavLink";
 
 const links = [
   { href: "/#options", title: "My Options" },
   { href: "/#work", title: "My Work" },
   { href: "/#contact", title: "Contact" },
 ];
+
+const baseLineStyles: CSSProperties = { height: 6.5, transformOrigin: "right" };
 
 const PageLayoutHeader: FC = (): ReactElement => {
   const [o, toggleO] = useCycle(false, true);
@@ -36,29 +24,46 @@ const PageLayoutHeader: FC = (): ReactElement => {
     toggleO(0);
   };
 
+  const animte = o ? "open" : "closed";
+
   return (
     <>
       <header role="header" className="fixed top-0 w-full px-16 pt-14 z-20">
         {/*<img height={70} width={"auto"} src={"/logo-full.svg"} />*/}
         <motion.button
           className={clsx(
-            "flex flex-col justify-between items-end h-16 py-2 ml-auto",
-            "opacity-80 w-20 group duration-300 hover:opacity-100 transition-all",
+            "flex flex-col justify-between items-end h-14 ml-auto",
+            "opacity-80 group duration-300 hover:opacity-100 transition-all",
             "focus:outline-none z-20 relative"
           )}
+          style={{ width: (!o ? 6 : "4.5") + "rem" }}
           onClick={() => toggleO()}
+          animate={animte}
         >
-          <span
-            style={{ height: 6.5 }}
-            className="bg-gray-500 bg-opacity-90 w-full rounded"
+          <motion.span
+            style={baseLineStyles}
+            variants={movingLinesVariants}
+            custom={-1}
+            className={clsx(
+              "w-full rounded",
+              o ? "bg-red-600" : "bg-gray-500 bg-opacity-90"
+            )}
           />
-          <span
-            style={{ height: 6.5 }}
-            className="bg-gray-500  bg-opacity-60 w-10/12 rounded"
+          <motion.span
+            style={baseLineStyles}
+            variants={centerLineVarints}
+            className="bg-gray-500 bg-opacity-60 w-10/12 rounded"
           />
-          <span
-            style={{ height: 6.5 }}
-            className="bg-gray-500  bg-opacity-30 w-7/12 group-hover:w-8/12 transition-all rounded duration-500"
+          <motion.span
+            style={baseLineStyles}
+            variants={movingLinesVariants}
+            custom={1}
+            className={clsx(
+              "rounded",
+              o
+                ? "w-full bg-red-600"
+                : "w-7/12 group-hover:w-8/12 bg-gray-500 bg-opacity-30"
+            )}
           />
         </motion.button>
         <AnimatePresence>
@@ -75,12 +80,12 @@ const PageLayoutHeader: FC = (): ReactElement => {
         <motion.nav
           className="fixed inset-0 z-10 bg-siteBg"
           variants={bgVariants}
-          animate={o ? "open" : "closed"}
+          animate={animte}
         >
           <motion.ul
             className="relative z-10 text-right mt-40 float-right mr-36 px-10 py-3"
             style={{ backdropFilter: "blur(6px)" }}
-            variants={variants}
+            variants={listVariants}
           >
             {links.map((link) => (
               <NavLink key={link.href} href={link.href} onClick={closeMenu}>
