@@ -1,6 +1,6 @@
-import { FC, ReactElement, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import clsx from "clsx";
+import { motion } from "framer-motion";
+import { FC, ReactElement, useEffect, useRef, useState } from "react";
 
 const VerticalScroller: FC<{
   title: string;
@@ -40,7 +40,7 @@ const VerticalScroller: FC<{
         ref={stickyRef}
       >
         <div
-          className="max-w-screen-xl px-4 font-bold mx-auto pt-32"
+          className="max-w-screen-xl px-4 font-bold mx-auto pt-32 text-center md:text-left"
           ref={(ele: HTMLDivElement) => {
             if (ele === null) return;
             setSizeT(ele.offsetHeight);

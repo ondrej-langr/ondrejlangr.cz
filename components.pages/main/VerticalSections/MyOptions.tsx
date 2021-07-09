@@ -1,6 +1,9 @@
 import Image from "components/Image";
 import Link from "next/link";
 import { FC, ReactElement } from "react";
+import designImage from "../../../public/design.png";
+import financeImage from "../../../public/finance.png";
+import technologiesImage from "../../../public/technologies.png";
 import VerticalScroller from "../VerticalScroller";
 
 const OptionsSection: FC = (): ReactElement => {
@@ -26,7 +29,7 @@ const OptionsSection: FC = (): ReactElement => {
               </p>
               <div className="col-span-4 text-right">
                 <Image
-                  src="/technologies.png"
+                  src={technologiesImage}
                   width={240}
                   height={290}
                   className={"w-full h-auto"}
@@ -52,7 +55,7 @@ const OptionsSection: FC = (): ReactElement => {
               </p>
               <div className="col-span-4 text-right">
                 <Image
-                  src="/design.png"
+                  src={designImage}
                   width={240}
                   height={290}
                   className={"w-full h-auto"}
@@ -84,7 +87,7 @@ const OptionsSection: FC = (): ReactElement => {
               </p>
               <div className="col-span-4 text-right">
                 <Image
-                  src="/finance.png"
+                  src={financeImage}
                   width={140}
                   height={328}
                   className={"w-full h-auto"}
