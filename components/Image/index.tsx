@@ -1,14 +1,12 @@
 import clsx from "clsx";
 import { default as NextImage, ImageProps } from "next/image";
-import { FC, ReactElement, useState } from "react";
+import { FC, memo, ReactElement } from "react";
 
-const Image: FC<ImageProps> = ({
+const Image: FC<ImageProps & { src: any }> = ({
   className,
   onLoad,
   ...props
 }): ReactElement => {
-  const [isReady, setIsReady] = useState(false);
-
   return (
     <>
       <div className={clsx(["relative", className])} style={{ lineHeight: 0 }}>
@@ -18,4 +16,4 @@ const Image: FC<ImageProps> = ({
   );
 };
 
-export default Image;
+export default memo(Image);

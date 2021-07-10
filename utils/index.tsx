@@ -1,3 +1,1 @@
-export const SEOpageTitle = (title): string => {
-    return `${title} | TOP programátor`;
-}
+export const SEOpageTitle = (title): string => `${title} | Nájemný programátor`;
