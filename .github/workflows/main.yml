@@ -18,5 +18,5 @@ jobs:
         uses: dokku/github-action@master
         with:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          git_remote_url: 'ssh://root@64.227.113.226:22/ondrejlangr-frontend'
+          git_remote_url: 'ssh://dokku@64.227.113.226:22/ondrejlangr-frontend'
           branch: 'main'
