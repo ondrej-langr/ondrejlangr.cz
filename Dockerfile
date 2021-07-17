@@ -12,6 +12,8 @@ COPY package*.json /usr/src/app/
 
 # Copying source files
 COPY . /usr/src/app
+COPY node_modules /usr/src/app
+COPY .next /usr/src/app
 
 # Building app
 # RUN yarn build
