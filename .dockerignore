@@ -1,4 +1,4 @@
-/node_modules
+# /node_modules
 /.pnp
 .pnp.js
 
@@ -6,7 +6,7 @@
 /coverage
 
 # next.js
-/.next/
+# /.next/
 /out/
 
 # production
