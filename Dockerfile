@@ -14,8 +14,8 @@ RUN yarn install
 COPY . /usr/src/app
 
 # Building app
-# RUN yarn build
+RUN npm run build
 EXPOSE 3000
 
 # Running the app
-CMD "yarn" "start"
+CMD "npm" "run" "start"
