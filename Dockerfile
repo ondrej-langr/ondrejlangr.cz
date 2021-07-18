@@ -8,12 +8,10 @@ WORKDIR /usr/src/app
 
 # Installing dependencies
 COPY package*.json /usr/src/app/
-# RUN yarn install
+RUN yarn install
 
 # Copying source files
 COPY . /usr/src/app
-COPY node_modules /usr/src/app
-COPY .next /usr/src/app
 
 # Building app
 # RUN yarn build
