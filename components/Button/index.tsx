@@ -1,8 +1,8 @@
-import clsx from "clsx";
-import { HTMLMotionProps, motion } from "framer-motion";
-import { FC, ReactElement } from "react";
+import clsx from 'clsx';
+import { HTMLMotionProps, motion } from 'framer-motion';
+import { FC, ReactElement } from 'react';
 
-const Button: FC<HTMLMotionProps<"button"> & {}> = ({
+const Button: FC<HTMLMotionProps<'button'> & {}> = ({
   children,
   onClick = () => {},
   className,
@@ -15,7 +15,7 @@ const Button: FC<HTMLMotionProps<"button"> & {}> = ({
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className={clsx(
-          "bg-sitePurple border-0 py-3 px-6 text-white text-xl font-semibold uppercase outline-none cursor-pointer",
+          'bg-project-accents border-0 py-3 px-6 text-white text-xl font-semibold uppercase outline-none cursor-pointer',
           className
         )}
         {...rest}

@@ -1,12 +1,12 @@
-import { HTMLMotionProps, motion } from "framer-motion";
-import { FC, ReactElement } from "react";
+import { HTMLMotionProps, motion } from 'framer-motion';
+import { FC, ReactElement } from 'react';
 
 const Specialization: FC = ({ children }): ReactElement => (
-  <p className="my-0 mr-10 opacity-90 hover:opacity-100 transition-colors duration-300">
+  <p className="my-0 opacity-90 hover:opacity-100 transition-colors duration-300">
     {children}
   </p>
 );
-const SocLink: FC<HTMLMotionProps<"a">> = ({
+const SocLink: FC<HTMLMotionProps<'a'>> = ({
   className,
   children,
   ...rest
@@ -14,39 +14,39 @@ const SocLink: FC<HTMLMotionProps<"a">> = ({
   <motion.a
     whileTap={{ scale: 0.9 }}
     whileHover={{ scale: 1.1 }}
-    className="hover:text-gray-400 text-gray2 transition-colors duration-300 mr-14"
+    className="hover:text-gray-400 text-gray2 transition-colors duration-300"
     {...rest}
   >
     {children}
   </motion.a>
 );
 
-const iconSize = 61;
+const iconSize = 55;
 
 const Title: FC = ({ children }): ReactElement => {
   return (
     <>
-      <div className="flex flex-col min-h-screen py-20">
+      <div className="flex flex-col min-h-screen xsm:pb-10 pb-20 pt-20">
         <div className="my-auto">
           <div className="relative">
-            <h1 className="text-8xl font-bold uppercase text-white max-w-screen-xl mx-auto px-4 z-10 relative">
+            <h1 className="text-center sm:text-left text-6xl xsm:text-8xl font-bold uppercase text-white max-w-screen-xl mx-auto px-4 z-10 relative">
               Ondřej Langr
             </h1>
-            <div className="w-7/12 bg-sitePurple bg-opacity-10 h-9 absolute left-0 bottom-0" />
+            <div className="w-7/12 bg-project-accents bg-opacity-10 h-9 absolute left-0 bottom-0" />
           </div>
           <div className="pt-9 relative">
             <h2
-              className="flex flex-wrap font-sans text-4xl font-bold max-w-screen-xl mx-auto px-4 z-10 relative"
-              style={{ color: "#898989" }}
+              className="flex justify-center text-center sm:text-left sm:justify-start flex-wrap gap-x-10 gap-y-5 font-sans text-2xl xsm:text-4xl font-bold max-w-screen-xl mx-auto px-4 z-10 relative"
+              style={{ color: '#898989' }}
             >
               <Specialization>Web Development</Specialization>
               <Specialization>Design</Specialization>
               <Specialization>Finance</Specialization>
             </h2>
-            <div className="w-10/12 bg-sitePurple bg-opacity-5 h-9 absolute left-0 -bottom-3" />
+            <div className="w-10/12 bg-project-accents bg-opacity-5 h-9 absolute left-0 -bottom-3" />
           </div>
         </div>
-        <div className="flex flex-wrap flex-none max-w-screen-xl mx-auto px-4 w-full">
+        <div className="flex gap-x-12 gap-y-6 sm:justify-start justify-center flex-wrap flex-none max-w-screen-xl mx-auto px-4 w-full">
           <SocLink href="tel:+40607445251" title="Zavolat">
             <svg
               xmlns="http://www.w3.org/2000/svg"
