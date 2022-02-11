@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html {
   @apply bg-siteBg;
+}
+body {
+  position: relative;
 }
 
 @layer utilities {
@@ -20,11 +23,10 @@ a {
 :root {
   --site-maxwi: 1230px;
   --site-sitespace: 20px;
-  --color-base: #287ECD;
+  --color-base: #287ecd;
   --color-blue: #3772ff;
   --color-red: #e70808;
   --color-yellow: #fdca40;
   --color-bg: #080708;
   --color-gray: #e6e8e6;
 }
-

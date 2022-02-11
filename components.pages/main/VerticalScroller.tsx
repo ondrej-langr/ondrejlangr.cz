@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import { motion } from "framer-motion";
-import { FC, ReactElement, useEffect, useRef, useState } from "react";
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { FC, ReactElement, useEffect, useRef, useState } from 'react';
 
 const VerticalScroller: FC<{
   title: string;
@@ -16,9 +16,9 @@ const VerticalScroller: FC<{
   useEffect(() => {
     const onScrollCallback = () => setOffset(stickyRef.current.offsetTop);
 
-    window.addEventListener("scroll", onScrollCallback);
+    window.addEventListener('scroll', onScrollCallback);
     return () => {
-      window.removeEventListener("scroll", onScrollCallback);
+      window.removeEventListener('scroll', onScrollCallback);
     };
   }, []);
 
@@ -34,8 +34,8 @@ const VerticalScroller: FC<{
     >
       <div
         className={clsx(
-          "sticky top-0 overflow-hidden",
-          elements.length > 1 && "h-screen"
+          'sticky top-0 overflow-hidden',
+          elements.length > 1 && 'h-screen'
         )}
         ref={stickyRef}
       >
@@ -66,8 +66,8 @@ const VerticalScroller: FC<{
             {elements.map((ele, index) => (
               <div
                 className={clsx(
-                  "w-full flex-none mt-40 inline-block",
-                  elements.length > 1 && "h-screen"
+                  'w-full flex-none mt-40 inline-block',
+                  elements.length > 1 && 'h-screen'
                 )}
                 key={ele.title || index}
               >

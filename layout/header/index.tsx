@@ -1,21 +1,21 @@
-import clsx from "clsx";
-import { AnimatePresence, motion, useCycle } from "framer-motion";
-import { CSSProperties, FC, ReactElement } from "react";
+import clsx from 'clsx';
+import { AnimatePresence, motion, useCycle } from 'framer-motion';
+import { CSSProperties, FC, ReactElement } from 'react';
 import {
   listVariants,
   bgVariants,
   centerLineVarints,
   movingLinesVariants,
-} from "./_anim-variants";
-import NavLink from "../NavLink";
+} from './_anim-variants';
+import NavLink from '../NavLink';
 
 const links = [
-  { href: "/#options", title: "My Options" },
-  { href: "/#work", title: "My Work" },
-  { href: "/#contact", title: "Contact" },
+  { href: '/#options', title: 'My Options' },
+  { href: '/#work', title: 'My Work' },
+  { href: '/#contact', title: 'Contact' },
 ];
 
-const baseLineStyles: CSSProperties = { height: 6.5, transformOrigin: "right" };
+const baseLineStyles: CSSProperties = { height: 6.5, transformOrigin: 'right' };
 
 const PageLayoutHeader: FC = (): ReactElement => {
   const [o, toggleO] = useCycle(false, true);
@@ -24,19 +24,22 @@ const PageLayoutHeader: FC = (): ReactElement => {
     toggleO(0);
   };
 
-  const animte = o ? "open" : "closed";
+  const animte = o ? 'open' : 'closed';
 
   return (
     <>
-      <header role="header" className="fixed top-0 w-full px-16 pt-14 z-20">
+      <header
+        role="header"
+        className="fixed top-0 w-full px-10 sm:px-16 pt-14 z-20"
+      >
         {/*<img height={70} width={"auto"} src={"/logo-full.svg"} />*/}
         <motion.button
           className={clsx(
-            "flex flex-col justify-between items-end h-14 ml-auto",
-            "opacity-80 group duration-300 hover:opacity-100 transition-all",
-            "focus:outline-none z-20 relative"
+            'flex flex-col justify-between items-end h-14 ml-auto',
+            'opacity-80 group duration-300 hover:opacity-100 transition-all',
+            'focus:outline-none z-20 relative'
           )}
-          style={{ width: (!o ? 6 : "4.5") + "rem" }}
+          style={{ width: (!o ? 6 : '4.5') + 'rem' }}
           onClick={() => toggleO()}
           animate={animte}
         >
@@ -45,8 +48,8 @@ const PageLayoutHeader: FC = (): ReactElement => {
             variants={movingLinesVariants}
             custom={-1}
             className={clsx(
-              "w-full rounded",
-              o ? "bg-red-600" : "bg-gray-500 bg-opacity-90"
+              'w-full rounded',
+              o ? 'bg-red-600' : 'bg-gray-500 bg-opacity-90'
             )}
           />
           <motion.span
@@ -59,10 +62,10 @@ const PageLayoutHeader: FC = (): ReactElement => {
             variants={movingLinesVariants}
             custom={1}
             className={clsx(
-              "rounded",
+              'rounded',
               o
-                ? "w-full bg-red-600"
-                : "w-7/12 group-hover:w-8/12 bg-gray-500 bg-opacity-30"
+                ? 'w-full bg-red-600'
+                : 'w-7/12 group-hover:w-8/12 bg-gray-500 bg-opacity-30'
             )}
           />
         </motion.button>
@@ -73,7 +76,7 @@ const PageLayoutHeader: FC = (): ReactElement => {
               exit={{ opacity: 0 }}
               initial={{ opacity: 1 }}
               className="fixed inset-0 z-0 bg-black bg-opacity-40"
-              style={{ backdropFilter: "blur(6px)" }}
+              style={{ backdropFilter: 'blur(6px)' }}
             />
           )}
         </AnimatePresence>
@@ -83,8 +86,8 @@ const PageLayoutHeader: FC = (): ReactElement => {
           animate={animte}
         >
           <motion.ul
-            className="relative z-10 text-right mt-40 float-right mr-36 px-10 py-3"
-            style={{ backdropFilter: "blur(6px)" }}
+            className="relative z-10 text-right mt-40 float-right sm:mr-36 px-10 py-3"
+            style={{ backdropFilter: 'blur(6px)' }}
             variants={listVariants}
           >
             {links.map((link) => (

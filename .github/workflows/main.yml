@@ -10,6 +10,7 @@ jobs:
   deploy:
     name: Ondrejlangr.cz frontend
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: actions/checkout@v2
         with:

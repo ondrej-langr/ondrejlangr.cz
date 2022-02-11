@@ -1,13 +1,13 @@
-import clsx from "clsx";
-import TitledSection from "components/TitledSection";
-import { Form, Formik, FormikBag, FormikProps } from "formik";
-import useSiteStore from "layout/store";
-import { FC, ReactElement, useRef, useState } from "react";
-import Field from "./Field";
-import OptionField from "./OptionField";
-import intialValues from "./_initialValues";
-import validationSchema from "./_schema";
-import { initVals } from "./_tsc";
+import clsx from 'clsx';
+import TitledSection from 'components/TitledSection';
+import { Form, Formik, FormikBag, FormikProps } from 'formik';
+import useSiteStore from 'layout/store';
+import { FC, ReactElement, useRef, useState } from 'react';
+import Field from './Field';
+import OptionField from './OptionField';
+import intialValues from './_initialValues';
+import validationSchema from './_schema';
+import { initVals } from './_tsc';
 
 const ContactForm: FC = (): ReactElement => {
   const formikRef = useRef<FormikProps<initVals>>(null);
@@ -19,8 +19,8 @@ const ContactForm: FC = (): ReactElement => {
     actions: FormikBag<initVals, initVals>
   ) => {
     setLoading(true);
-    const res = await fetch("/api/contactus", {
-      method: "POST",
+    const res = await fetch('/api/contactus', {
+      method: 'POST',
       body: JSON.stringify(values),
     });
     setShowDone(true);
@@ -40,15 +40,15 @@ const ContactForm: FC = (): ReactElement => {
           validationSchema={validationSchema}
         >
           <Form className="mb-20 mt-20">
-            <div className="grid grid-cols-12 mb-12 space-x-10">
-              <div className="col-span-7">
+            <div className="grid md:grid-cols-12 mb-12 gap-12">
+              <div className="md:col-span-7">
                 <Field name="fullname" id="fullname" placeholder="Full name" />
                 <Field
                   name="email"
                   id="email"
                   placeholder="Email"
                   wrapProps={{
-                    className: "mt-12",
+                    className: 'mt-12',
                   }}
                 />
                 <Field
@@ -56,7 +56,7 @@ const ContactForm: FC = (): ReactElement => {
                   id="telephone"
                   placeholder="Telephone number"
                   wrapProps={{
-                    className: "mt-12",
+                    className: 'mt-12',
                   }}
                 />
                 <Field
@@ -66,28 +66,17 @@ const ContactForm: FC = (): ReactElement => {
                   component="textarea"
                   rows="10"
                   wrapProps={{
-                    className: "mt-12",
+                    className: 'mt-12',
                   }}
                 />
                 {showDone && (
-                  <p className={"text-green-700 text-2xl my-10"}>
+                  <p className={'text-green-700 text-2xl my-10'}>
                     Thank you for your message! I'll get to you right away as
                     soon as it will be possible :)
                   </p>
                 )}
-                <button
-                  type="submit"
-                  className={clsx(
-                    "bg-indigo-700 py-4 px-5 mt-12 text-white mx-auto block",
-                    formikRef.current?.isSubmitting &&
-                      "pointer-events-none opacity-60"
-                  )}
-                  disabled={formikRef.current?.isSubmitting}
-                >
-                  Submit
-                </button>
               </div>
-              <div className="col-span-5 pl-7">
+              <div className="md:col-span-5">
                 <p className="m-0 text-white text-2xl">Expected Budget</p>
                 <div role="group" className="mt-4 mb-10">
                   <OptionField
@@ -148,6 +137,19 @@ const ContactForm: FC = (): ReactElement => {
                     placeholder="Not sure"
                   />
                 </div>
+              </div>
+              <div className="md:col-span-7">
+                <button
+                  type="submit"
+                  className={clsx(
+                    'bg-project-accents py-4 px-5 mt-12 text-white mx-auto block',
+                    formikRef.current?.isSubmitting &&
+                      'pointer-events-none opacity-60'
+                  )}
+                  disabled={formikRef.current?.isSubmitting}
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </Form>
