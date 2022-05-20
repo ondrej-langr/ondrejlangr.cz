@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  position: relative;
+}
+
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+a {
+  @apply text-sitePurple hover:underline;
+}
+
+:root {
+  --site-maxwi: 1230px;
+  --site-sitespace: 20px;
+  --color-base: #287ecd;
+  --color-blue: #3772ff;
+  --color-red: #e70808;
+  --color-yellow: #fdca40;
+  --color-bg: #080708;
+  --color-gray: #e6e8e6;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  padding: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-300 dark:bg-red-300;
+  border-radius: 10px;
+  cursor: grabbing;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-400 dark:bg-red-400;
+}
