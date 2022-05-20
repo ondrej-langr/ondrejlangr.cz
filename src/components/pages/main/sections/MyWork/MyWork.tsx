@@ -56,7 +56,7 @@ export const MyWorkSection: FC = (): ReactElement => {
             </article>
           ))}
       </div>
-      <div className="text-center mt-20">
+      <div className="mt-20">
         <Button onClick={onClickShowMore}>
           {t(!showMore ? 'Show More' : 'Show less')}
         </Button>
