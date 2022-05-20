@@ -120,7 +120,7 @@ export const ContactForm: FC = (): ReactElement => {
                     <a
                       title={t('ICO')}
                       target="_blank"
-                      rel="nofollow"
+                      rel="noopener"
                       href="https://www.podnikatel.cz/rejstrik/ondrej-langr-09579443/"
                       className="dark:text-project-accents text-blue-300"
                     >

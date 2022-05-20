@@ -1,17 +1,13 @@
 import clsx from 'clsx';
 import { default as NextImage, ImageProps as NextImageProps } from 'next/image';
-import { FC, memo, ReactElement } from 'react';
+import { FC, memo } from 'react';
 
 export interface ImageProps extends NextImageProps {
   src: any;
 }
 
-const Image: FC<ImageProps> = ({ className, onLoad, ...props }) => (
-  <>
-    <div className={clsx(['relative', className])} style={{ lineHeight: 0 }}>
-      <NextImage className="z-10 relative" placeholder="blur" {...props} />
-    </div>
-  </>
+const Image: FC<ImageProps> = ({ onLoad, ...props }) => (
+  <NextImage placeholder="blur" {...props} />
 );
 
 export default memo(Image);

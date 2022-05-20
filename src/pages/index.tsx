@@ -3,6 +3,7 @@ import {
   HeroBanner,
   AboutSection,
   WhatCanIOfferSection,
+  MyWorkSection,
 } from '../components/pages/main';
 import HeadTitle from '../components/HeadTitle';
 import { useTranslation } from 'next-i18next';
@@ -16,6 +17,7 @@ const HomePage = () => {
       <HeroBanner />
       <AboutSection />
       <WhatCanIOfferSection />
+      <MyWorkSection />
       <ContactForm />
     </>
   );
