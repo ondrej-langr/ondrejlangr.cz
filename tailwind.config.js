@@ -1,11 +1,6 @@
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './components.pages/**/*.{js,ts,jsx,tsx}',
-    './layout/**/*.{js,ts,jsx,tsx}',
-  ],
-  darkMode: false,
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -14,6 +9,10 @@ module.exports = {
         sitePurple: '#5C04CC',
         project: {
           accents: '#DF2935',
+          green: '#21A179',
+        },
+        headline: {
+          text: '#898989',
         },
       },
       height: {

@@ -18,6 +18,30 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@config": [
+        "./src/config"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@layouts": [
+        "src/layouts"
+      ],
+      "@contexts": [
+        "src/contexts"
+      ],
+      "@hooks": [
+        "src/hooks"
+      ],
+      "@public-files/*": [
+        "public/*"
+      ]
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
