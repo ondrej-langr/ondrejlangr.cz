@@ -3,26 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "export": "next build && next export",
-    "start": "next start"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/image": "^0.9.2",
+    "@astrojs/tailwind": "^2.0.2",
     "@hookform/resolvers": "^2.9.8",
+    "astro": "^1.4.6",
     "clsx": "^1.2.1",
     "framer-motion": "^7.5.3",
-    "next": "^12.3.1",
-    "next-i18next": "^12.1.0",
     "nodemailer": "^6.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.37.0",
     "react-intl": "^6.1.2",
+    "sharp": "^0.31.1",
     "tabler-icons-react": "^1.55.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@astrojs/react": "^1.1.4",
     "@types/node": "^18.8.3",
     "@types/react": "^18.0.21",
     "autoprefixer": "^10.4.12",
