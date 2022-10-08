@@ -18,7 +18,8 @@ export const Select: FC<SelectProps> = forwardRef(function Input(
   { placeholder, className, name, options, ...props },
   ref
 ) {
-  const { errors, touchedFields } = useFormState();
+  // TODO: Refactor so we don't have to use typings like this
+  const { errors, touchedFields } = useFormState<{ something: string }>();
   const { t } = useTranslation();
 
   const error = errors?.[name]?.message;
