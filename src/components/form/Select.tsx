@@ -1,9 +1,9 @@
 import { DetailedHTMLProps, FC, forwardRef } from 'react';
 import clsx from 'clsx';
+import { t } from 'i18next';
 import { useFormState } from 'react-hook-form';
 import { Check, Cross } from 'tabler-icons-react';
 import { SelectHTMLAttributes } from 'react';
-import { useTranslation } from 'next-i18next';
 
 export interface SelectProps
   extends DetailedHTMLProps<
@@ -20,7 +20,6 @@ export const Select: FC<SelectProps> = forwardRef(function Input(
 ) {
   // TODO: Refactor so we don't have to use typings like this
   const { errors, touchedFields } = useFormState<{ something: string }>();
-  const { t } = useTranslation();
 
   const error = errors?.[name]?.message;
   const isTouched = touchedFields?.[name];
@@ -49,7 +48,7 @@ export const Select: FC<SelectProps> = forwardRef(function Input(
         {...props}
       >
         <option value="none" disabled hidden>
-          {t('Select an Option')}
+          {String(t('Select an Option'))}
         </option>
         {options.map(({ value, label }) => (
           <option value={value} key={value}>

@@ -1,0 +1,15 @@
+---
+import { AboutSection, WhatCanIOfferSection } from '@/components/sections';
+import { ContactForm } from '@/components/sections/ContactForm';
+import { HeroBanner } from '@/components/sections/HeroBanner';
+import MyWorkSection from '@/components/sections/MyWorkSection.astro';
+import SiteLayout from '@/layouts/SiteLayout.astro';
+---
+
+<SiteLayout>
+  <HeroBanner />
+  <AboutSection />
+  <WhatCanIOfferSection />
+  <MyWorkSection />
+  <ContactForm client:load />
+</SiteLayout>
