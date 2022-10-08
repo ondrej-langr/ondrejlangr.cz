@@ -1,12 +1,6 @@
-import {
-  DetailedHTMLProps,
-  FC,
-  forwardRef,
-  InputHTMLAttributes,
-  ReactElement,
-} from 'react';
+import { DetailedHTMLProps, FC, forwardRef, InputHTMLAttributes } from 'react';
 import clsx from 'clsx';
-import { useFormContext, useFormState } from 'react-hook-form';
+import { useFormState } from 'react-hook-form';
 import { Check, Cross } from 'tabler-icons-react';
 
 export interface InputProps
@@ -21,7 +15,8 @@ export const Input: FC<InputProps> = forwardRef(function Input(
   { placeholder, className, name, ...props },
   ref
 ) {
-  const { errors, touchedFields } = useFormState();
+  // TODO: Refactor so we don't have to use typings like this
+  const { errors, touchedFields } = useFormState<{ something: string }>();
 
   const error = errors?.[name]?.message;
   const isTouched = touchedFields?.[name];

@@ -20,7 +20,8 @@ export const Textarea: FC<TextareaProps> = forwardRef(function Textarea(
   { placeholder, className, name, ...props },
   ref
 ) {
-  const { errors, touchedFields } = useFormState();
+  // TODO: Refactor so we don't have to use typings like this
+  const { errors, touchedFields } = useFormState<{ something: string }>();
 
   const error = errors?.[name]?.message;
   const isTouched = touchedFields?.[name];
