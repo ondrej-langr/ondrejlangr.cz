@@ -32,5 +32,46 @@ module.exports = {
       sans: ['poppins', 'sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [
+    {
+      handler({ addUtilities, addBase, theme }) {
+        addUtilities({
+          '.text-gradient': {
+            backgroundClip: 'text',
+            webkitTextFillColor: 'transparent',
+          },
+        });
+
+        addBase({
+          body: {
+            position: 'relative',
+          },
+          a: {
+            color: theme('colors.sitePurple'),
+            '&:hover': {
+              textDecoration: 'underline',
+            },
+          },
+          html: {
+            '::-webkit-scrollbar': {
+              width: '10px',
+              padding: '5px',
+            },
+            '::-webkit-scrollbar-track': {
+              borderRadius: '10px',
+            },
+            '::-webkit-scrollbar-thumb': {
+              backgroundColor: theme('colors.blue.300'),
+              borderRadius: '10px',
+              cursor: 'grabbing',
+            },
+
+            '::-webkit-scrollbar-thumb:hover': {
+              backgroundColor: theme('colors.blue.400'),
+            },
+          },
+        });
+      },
+    },
+  ],
 };
