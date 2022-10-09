@@ -3,7 +3,7 @@ export default {
   defaultLanguage: 'en',
   supportedLanguages: ['en', 'cs'],
   i18next: {
-    debug: true, // convenient during development to check for missing keys
+    debug: false, // convenient during development to check for missing keys
     resources: {
       en: {
         translation: {
@@ -16,5 +16,8 @@ export default {
         },
       },
     },
+  },
+  i18nextPlugins: {
+    '{initReactI18next}': 'react-i18next',
   },
 };
