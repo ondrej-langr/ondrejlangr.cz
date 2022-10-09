@@ -21,7 +21,7 @@ export const BurgerMenuContent: FC = ({}) => {
         )}
       </AnimatePresence>
       <motion.nav
-        className="fixed inset-0 z-10 dark:bg-siteBg bg-white"
+        className="fixed inset-0 z-10 dark:bg-siteBg bg-white opacity-0"
         variants={bgVariants}
         animate={animateValue}
       >

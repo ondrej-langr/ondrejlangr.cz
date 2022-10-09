@@ -1,8 +1,10 @@
 import TitledSection from '@/components/TitledSection';
-import { t } from 'i18next';
 import { FC, ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const WhatCanIOfferSection: FC = (): ReactElement => {
+  const { t } = useTranslation();
+
   return (
     <TitledSection title={t('What can I do for you')} id="what-can-i-offer">
       <p className="text-gray-500 text-opacity-80 text-2xl xsm:text-3xl xsm:leading-10 mt-10 !leading-relaxed">

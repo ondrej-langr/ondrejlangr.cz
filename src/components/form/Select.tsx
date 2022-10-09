@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, FC, forwardRef } from 'react';
 import clsx from 'clsx';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { useFormState } from 'react-hook-form';
 import { Check, Cross } from 'tabler-icons-react';
 import { SelectHTMLAttributes } from 'react';
@@ -18,6 +18,7 @@ export const Select: FC<SelectProps> = forwardRef(function Input(
   { placeholder, className, name, options, ...props },
   ref
 ) {
+  const { t } = useTranslation();
   // TODO: Refactor so we don't have to use typings like this
   const { errors, touchedFields } = useFormState<{ something: string }>();
 

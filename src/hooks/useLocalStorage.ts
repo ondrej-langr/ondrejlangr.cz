@@ -20,8 +20,11 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
   const setValue = (valueOrFunction: Dispatch<SetStateAction<T>>) => {
     try {
       setStoredValue((prevValue) => {
-        const valueToStore =
-          typeof prevValue === 'function' ? prevValue(prevValue) : prevValue;
+        const valueToStore = (
+          typeof valueOrFunction === 'function'
+            ? valueOrFunction(prevValue)
+            : valueOrFunction
+        ) as T;
 
         if (typeof window !== 'undefined') {
           window.localStorage.setItem(key, JSON.stringify(valueToStore));

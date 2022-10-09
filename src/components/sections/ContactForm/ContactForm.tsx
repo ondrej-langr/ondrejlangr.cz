@@ -10,9 +10,10 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { ContactRow } from './ContactRow';
 import { Mail, Phone } from 'tabler-icons-react';
 import { SocialLinks } from '../HeroBanner/SocialLinks';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const ContactForm: FC = (): ReactElement => {
+  const { t } = useTranslation();
   const formMethods = useForm({
     defaultValues: initialValue,
     resolver: yupResolver(validationSchema),

@@ -1,6 +1,7 @@
 ---
 import { FancyPageLabel } from '@/components/FancyPageTitle';
 import { SiteLayoutMenu } from '@/components/layout';
+import { DarkModeChanger } from '@/components/DarkModeChanger';
 import config from '@/config';
 import { getPageTitle } from '@/utils';
 ---
@@ -32,6 +33,8 @@ import { getPageTitle } from '@/utils';
       </div>
       <div class="relative z-10">
         <FancyPageLabel client:idle />
+        <DarkModeChanger client:load />
+
         <header
           role="heading"
           class="top-0 w-full px-2 py-2 z-20 flex items-center justify-end sticky max-w-screen-xl mx-auto"

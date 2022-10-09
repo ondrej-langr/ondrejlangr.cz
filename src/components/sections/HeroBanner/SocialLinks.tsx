@@ -8,7 +8,7 @@ import {
   Mail,
   Phone,
 } from 'tabler-icons-react';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const SocLink: FC<HTMLMotionProps<'a'>> = ({
   className,
@@ -28,6 +28,7 @@ const SocLink: FC<HTMLMotionProps<'a'>> = ({
 const iconSize = 55;
 
 export const SocialLinks: FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex gap-x-12 gap-y-6 sm:justify-start justify-center flex-wrap flex-none max-w-screen-xl mx-auto px-4 w-full mt-32">
       <SocLink href="tel:+40607445251" title={t('Zavolat')} target="_blank">
