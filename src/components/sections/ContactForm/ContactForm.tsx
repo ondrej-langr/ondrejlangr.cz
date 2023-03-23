@@ -56,7 +56,7 @@ export const ContactForm: FC = (): ReactElement => {
                   placeholder={t('Telephone number')}
                   {...register('telephone')}
                 />
-                <Select
+                {/* <Select
                   id="budget"
                   placeholder={t('Expected Budget')}
                   options={[
@@ -68,7 +68,7 @@ export const ContactForm: FC = (): ReactElement => {
                     { value: 'Not sure' },
                   ]}
                   {...register('budget')}
-                />
+                /> */}
                 <Textarea
                   required
                   id="message"
@@ -90,7 +90,7 @@ export const ContactForm: FC = (): ReactElement => {
                 </div>
                 <address className="text-2xl font-semibold mt-2 not-italic text-gray-600 dark:text-gray-300">
                   Lukavec u Hořic 13, <br />
-                  50801 Hořice
+                  508 01 Hořice
                 </address>
                 <div className="mt-10 text-2xl dark:text-project-accents text-blue-300">
                   <ContactRow icon={<Phone size={25} />}>

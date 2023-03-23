@@ -13,13 +13,14 @@ export const WhatCanIOfferSection: FC = (): ReactElement => {
         working with me, you are going to get done things that are important.
         <br />
         <br />
-        Every special project needs special solution and for that it needs
-        special tools ⚒️ <br /> My usual go-to for web apps is Javascript{' '}
-        <b>(Typescript only)</b>
-        <br />, because I find it the most <b>productive 💪</b>, but I have a
-        wide range of expertise on other technologies as well 😎 <br />
-        <a className="bold" href="#contact">
-          Thirsty for more? I gotchu - lets talk! 🔥
+        As every project is special the solution must be also special. <br />
+        I'm choosing tools that I consider myself the best for each
+        problem/project. What I find myself using most of the time is{' '}
+        <b>Typescript</b>, <b>React (React Native too) + Next.js Framework</b>{' '}
+        and sometimes <b>PHP</b>. Any other tool that is connected to web
+        development, such as CSS or knowledge HTML5, is not an issue at all.
+        <a className="bold" href="#work">
+          Interested in specific projects? Click me! 🔥
         </a>
       </p>
     </TitledSection>

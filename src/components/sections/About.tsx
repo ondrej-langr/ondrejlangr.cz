@@ -12,11 +12,11 @@ export const AboutSection: FC = () => {
         <br />
         When I don't work I focus on my hobbies and my family. My hobbies are
         reading, cooking, extreme sports, socializing and learning new
-        languages. AKA avid mind-broadening person 🌅
+        languages.
         <br />
         <br />
-        My favorite topics are, of course, latest technology and programming
-        trends, cars, psychology and japanese culture 🙇 <br />
+        I'm always trying to improve myself by learn latest technologies and
+        getting to know latest programming trends 🙇 <br />
         <a className="bold" href="#contact">
           Want to talk it over coffee? Contact me then 😀
         </a>
