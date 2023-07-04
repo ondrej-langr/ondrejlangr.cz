@@ -28,6 +28,8 @@ const fancyVariants: Variants = {
   },
 };
 
+const MotionLink = motion(Link);
+
 const NavLink: FC<HTMLMotionProps<'a'>> = ({
   href,
   children,
@@ -36,33 +38,32 @@ const NavLink: FC<HTMLMotionProps<'a'>> = ({
   const [hs, toggleH] = useCycle('exit', 'enter');
 
   return (
-    <Link href={href} passHref>
-      <li className="my-7">
-        <motion.a
-          variants={variants}
-          className="text-5xl xsm:text-7xl cursor-pointer dark:text-white text-blue-300 font-semibold whitespace-nowrap overflow-hidden block hover:no-underline"
-          onHoverStart={() => toggleH()}
-          onHoverEnd={() => toggleH()}
-          onClick={onClick}
+    <li className="my-7">
+      <MotionLink
+        variants={variants}
+        className="text-5xl xsm:text-7xl cursor-pointer dark:text-white text-blue-300 font-semibold whitespace-nowrap overflow-hidden block hover:no-underline"
+        onHoverStart={() => toggleH()}
+        onHoverEnd={() => toggleH()}
+        onClick={onClick}
+        href={href}
+      >
+        <motion.div
+          variants={fancyVariants}
+          animate={hs}
+          className="relative"
+          style={{ lineHeight: 1.4 }}
         >
-          <motion.div
-            variants={fancyVariants}
-            animate={hs}
-            className="relative"
-            style={{ lineHeight: 1.4 }}
+          <span>{children}</span>
+          <span
+            className={
+              'dark:text-project-accents text-project-green absolute w-full h-full left-0 -bottom-full'
+            }
           >
-            <span>{children}</span>
-            <span
-              className={
-                'dark:text-project-accents text-project-green absolute w-full h-full left-0 -bottom-full'
-              }
-            >
-              {children}
-            </span>
-          </motion.div>
-        </motion.a>
-      </li>
-    </Link>
+            {children}
+          </span>
+        </motion.div>
+      </MotionLink>
+    </li>
   );
 };
 

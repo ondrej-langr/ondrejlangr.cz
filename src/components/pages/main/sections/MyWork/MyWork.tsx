@@ -3,10 +3,10 @@ import Image from 'src/components/Image';
 import TitledSection from 'src/components/TitledSection';
 import { FC, ReactElement, useState } from 'react';
 import projectsList from './projectsList';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from '@hooks';
 
 export const MyWorkSection: FC = (): ReactElement => {
-  const { t } = useTranslation();
+  const { t } = useTranslations();
   const [showMore, setShowMore] = useState(false);
 
   const onClickShowMore = () => setShowMore(!showMore);
@@ -24,6 +24,7 @@ export const MyWorkSection: FC = (): ReactElement => {
             <article key={project.title}>
               <div className="w-full rounded-xl overflow-hidden h-[250px] relative rounded-br-none border-4 border-opacity-60 border-project-green  dark:border-0">
                 <Image
+                  alt=""
                   src={project.imageUrl}
                   layout="fill"
                   objectPosition="center"

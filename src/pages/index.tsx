@@ -6,10 +6,10 @@ import {
   MyWorkSection,
 } from '../components/pages/main';
 import HeadTitle from '../components/HeadTitle';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from '@hooks';
 
 const HomePage = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslations();
 
   return (
     <>

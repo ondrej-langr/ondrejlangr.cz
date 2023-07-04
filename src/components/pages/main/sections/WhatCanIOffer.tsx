@@ -1,9 +1,9 @@
 import TitledSection from '@components/TitledSection';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from '@hooks';
 import { FC, ReactElement } from 'react';
 
 export const WhatCanIOfferSection: FC = (): ReactElement => {
-  const { t } = useTranslation();
+  const { t } = useTranslations();
 
   return (
     <TitledSection title={t('What can I do for you')} id="what-can-i-offer">

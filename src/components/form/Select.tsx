@@ -3,7 +3,8 @@ import clsx from 'clsx';
 import { useFormState } from 'react-hook-form';
 import { Check, Cross } from 'tabler-icons-react';
 import { SelectHTMLAttributes } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useIntl } from 'react-intl';
+import { useTranslations } from '@hooks';
 
 export interface SelectProps
   extends DetailedHTMLProps<
@@ -20,7 +21,7 @@ export const Select: FC<SelectProps> = forwardRef(function Input(
 ) {
   // TODO: Refactor so we don't have to use typings like this
   const { errors, touchedFields } = useFormState<{ something: string }>();
-  const { t } = useTranslation();
+  const { t } = useTranslations();
 
   const error = errors?.[name]?.message;
   const isTouched = touchedFields?.[name];

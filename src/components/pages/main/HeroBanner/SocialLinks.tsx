@@ -1,5 +1,5 @@
 import { HTMLMotionProps, motion } from 'framer-motion';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from '@hooks';
 import { FC } from 'react';
 import {
   BrandFacebook,
@@ -28,7 +28,7 @@ const SocLink: FC<HTMLMotionProps<'a'>> = ({
 const iconSize = 55;
 
 export const SocialLinks: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslations();
 
   return (
     <div className="flex gap-x-12 gap-y-6 sm:justify-start justify-center flex-wrap flex-none max-w-screen-xl mx-auto px-4 w-full mt-32">
