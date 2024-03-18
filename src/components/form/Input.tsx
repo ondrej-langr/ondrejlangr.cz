@@ -1,3 +1,5 @@
+'use client';
+
 import { DetailedHTMLProps, FC, forwardRef, InputHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { useFormState } from 'react-hook-form';

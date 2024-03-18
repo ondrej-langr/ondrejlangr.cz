@@ -1,12 +1,10 @@
-import '../styles/globals.scss';
-import { SiteLayout } from '@layouts';
-import { useEffect } from 'react';
-import { SiteContextProvider } from 'src/contexts';
+'use client';
 
-let prevTitle = '';
+import { FC, useEffect } from 'react';
 
-function MyApp({ Component, pageProps }) {
+export const TitleChanger: FC = () => {
   useEffect(() => {
+    let prevTitle = '';
     const onUnloadCallback = () => {
       switch (document.visibilityState) {
         case 'hidden':
@@ -25,13 +23,5 @@ function MyApp({ Component, pageProps }) {
     };
   }, []);
 
-  return (
-    <SiteContextProvider>
-      <SiteLayout>
-        <Component {...pageProps} />
-      </SiteLayout>
-    </SiteContextProvider>
-  );
-}
-
-export default MyApp;
+  return null;
+};

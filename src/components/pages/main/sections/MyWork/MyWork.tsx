@@ -1,3 +1,5 @@
+'use client';
+
 import Button from 'src/components/Button';
 import Image from 'src/components/Image';
 import TitledSection from 'src/components/TitledSection';

@@ -1,6 +1,8 @@
+'use client';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import { FC } from 'react';
-import NavLink from '../NavLink';
+import { NavLink } from '../NavLink';
 import { bgVariants, links, listVariants } from './constants';
 import { useBurgerMenuContext } from './context';
 

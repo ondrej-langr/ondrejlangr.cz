@@ -11,13 +11,13 @@ const TitledSection: FC<
   <>
     <section
       className={clsx(
-        'relative mt-32 flex flex-wrap max-w-screen-xl mx-auto',
+        'relative mt-20 flex flex-wrap max-w-screen-xl mx-auto',
         className
       )}
       {...rest}
     >
       <div className="w-full">
-        <div className="max-w-screen-xl px-4 font-bold mx-auto pt-32 text-center md:text-left">
+        <div className="max-w-screen-xl px-4 font-bold mx-auto pt-20 text-center md:text-left">
           <h1 className="mt-0 text-blue-300 dark:text-white text-6xl xsm:text-7xl mb-0 uppercase relative inline-block">
             <span className="z-10 relative drop-shadow-sm">{title}</span>
             <span className="absolute w-0 dark:w-full bg-project-accents bottom-0 left-0 h-6 z-0 transition-all duration-200" />

@@ -1,9 +1,9 @@
+'use client';
 import { DetailedHTMLProps, FC, forwardRef } from 'react';
 import clsx from 'clsx';
 import { useFormState } from 'react-hook-form';
 import { Check, Cross } from 'tabler-icons-react';
 import { SelectHTMLAttributes } from 'react';
-import { useIntl } from 'react-intl';
 import { useTranslations } from '@hooks';
 
 export interface SelectProps

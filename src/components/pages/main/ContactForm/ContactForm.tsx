@@ -1,36 +1,31 @@
+'use client';
+
 import TitledSection from '@components/TitledSection';
 import { FC, ReactElement } from 'react';
-import { useSiteContext } from '@contexts';
-import Button from '@components/Button';
 import { FormState } from './types';
 import { validationSchema } from './schemas';
 import { initialValue } from './constants';
-import { Input, Select, Textarea } from '@components/form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useTranslations } from '@hooks';
 import { ContactRow } from './ContactRow';
 import { Mail, Phone } from 'tabler-icons-react';
-import { SocialLinks } from '../HeroBanner/SocialLinks';
+import { useDarkMode } from '@contexts/DarkModeContext';
 
 export const ContactForm: FC = (): ReactElement => {
   const formMethods = useForm({
     defaultValues: initialValue,
     resolver: zodResolver(validationSchema),
   });
-  const { setValue } = useSiteContext();
   const { t } = useTranslations();
-  const { handleSubmit, reset, formState, register } = formMethods;
+  const { handleSubmit, reset } = formMethods;
 
   const onSubmitCallback = async (values: FormState) => {
-    setValue('isLoading', true);
-
     await fetch('/api/contactus', {
       method: 'POST',
       body: JSON.stringify(values),
     });
 
-    setValue('isLoading', false);
     reset();
   };
 
@@ -59,7 +54,7 @@ export const ContactForm: FC = (): ReactElement => {
                     href="tel:+420607445251"
                     className="dark:text-project-accents text-blue-300"
                   >
-                    +420 607 445 251
+                    &#43;&#52;&#50;&#48;&#32;&#54;&#48;&#55;&#32;&#52;&#52;&#53;&#32;&#50;&#53;&#49;
                   </a>
                 </ContactRow>
                 <ContactRow icon={<Mail size={25} />}>

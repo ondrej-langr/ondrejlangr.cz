@@ -1,3 +1,4 @@
+'use client';
 import {
   DetailedHTMLProps,
   FC,
@@ -5,7 +6,7 @@ import {
   TextareaHTMLAttributes,
 } from 'react';
 import clsx from 'clsx';
-import { useFormContext, useFormState } from 'react-hook-form';
+import { useFormState } from 'react-hook-form';
 import { Check, Cross } from 'tabler-icons-react';
 
 export interface TextareaProps
