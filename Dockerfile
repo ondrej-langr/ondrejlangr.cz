@@ -2,7 +2,7 @@ FROM node:25-alpine3.23
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN npm i -g corepack
+RUN npm i -g corepack --force
 RUN corepack enable
 
 RUN pnpm config set node-linker hoisted
